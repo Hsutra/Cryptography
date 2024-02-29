@@ -4,35 +4,6 @@
 Евклида.
 '''
 
-def euclideanAlgorithm(a, b, i = 1):
-    if b == 0:
-        return a, 1, 0
-    else:
-        print(f"q{i} = {a}, r{i} = {b}")
-        gcd, x, y = euclideanAlgorithm(b, a % b, i + 1)
-        print(f"({b}) -> {x}, ({a}) -> {y}")
-        return gcd, y, x - (a // b) * y
-
-def resolveEquation(a, b, c):
-    gcd, x, y = euclideanAlgorithm(a, b)
-    if c % gcd != 0:
-        return None
-    else:
-        x *= c // gcd
-        y *= c // gcd
-        return x, y, gcd
-#
-# a = 5
-# b = 7
-# c = 14
-# res = resolveEquation(a, b, c)
-# if res:
-#     commRes = f"x = {res[0]} + {b // res[2]}k, y = {res[1]} - {a // res[2]}k"
-#     print(f"Решение уравнения {a}x + {b}y = {c}:\nЧастное решение: x = {res[0]}, y = {res[1]}\nОбщее решение: {commRes}")
-# else:
-#     print("Решения нет")
-
-
 def extended_euclidean_algorithm(a, b):
     r1, r2 = a, b
     s1, s2 = 1, 0

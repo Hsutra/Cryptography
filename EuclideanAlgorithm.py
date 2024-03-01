@@ -36,10 +36,11 @@ def diophantine_equation(a, b, c):
 a = 7
 b = 5
 c = 14
+print(f"Решение уравнения {a}x + {b}y = {c}:")
 solution = diophantine_equation(a, b, c)
 if solution:
     d, x, y = solution
     comm_solution = f"x = {x} + {b // d}t, y = {y} - {a // d}t"
-    print(f"Решение уравнения {a}x + {b}y = {c}:\nЧастное решение: x = {x}, y = {y}\nОбщее решение: {comm_solution}")
+    print(f"Частное решение: x = {x}, y = {y}\nОбщее решение: {comm_solution}")
 else:
     print("Уравнение не имеет решения")
